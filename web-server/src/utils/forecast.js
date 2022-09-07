@@ -14,9 +14,13 @@ const forecast = (latitude, longitude, callback) => {
       body.current.weather_descriptions[0] +
         `. It is currently ` +
         body.current.temperature +
+        ` degrees. Feels like ` +
+        body.current.feelslike +
         ` degrees. Humidity is ` +
         body.current.humidity +
-        `%.`);
+        `%. Wind speed is ` +
+        body.current.wind_speed +
+        ` m/s.`);
 
     if (error) {
       callback(`Unable to connect to service!`);
